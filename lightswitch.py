@@ -1,6 +1,15 @@
 import tkinter as tk
 import pygame
+import os.path
 
+if os.path.exists("actions.log"):
+        file = open("actions.log", "a")
+        file.write("\n\n\nfile has been loaded succesfully!\n")
+        file.close()
+else:
+    with open("actions.log", 'w') as file:
+        file.write("file has been created succesfully!\n")
+        file.close()
 pygame.mixer.init()
 
 def Play(soundname = ""):
